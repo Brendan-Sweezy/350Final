@@ -41,7 +41,11 @@ module Wrapper (CLK100MHZ, BTNC, LED, hSync, vSync, VGA_B, VGA_G, VGA_R);
 		
 	assign clock = CLK100MHZ;
 	assign reset = BTNC;
-    assign LED = pc[7:0];
+    
+    assign LED[0] = vSync;
+    assign LED[1] = hSync;
+    
+    //assign LED = pc[7:0];
     //assign LED = 8'b10101010;
 
 	// ADD YOUR MEMORY FILE HERE

@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date             : Fri Apr  5 10:41:25 2024
+| Date             : Fri Apr  5 10:55:37 2024
 | Host             : P1-08 running 64-bit major release  (build 9200)
 | Command          : report_power -file Wrapper_power_routed.rpt -pb Wrapper_power_summary_routed.pb -rpx Wrapper_power_routed.rpx
 | Design           : Wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.110        |
+| Total On-Chip Power (W)  | 0.098        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.013        |
+| Dynamic (W)              | 0.001        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 84.5         |
-| Junction Temperature (C) | 25.5         |
+| Max Ambient (C)          | 84.6         |
+| Junction Temperature (C) | 25.4         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |       84 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       29 |     63400 |            0.05 |
-|   Register     |    <0.001 |       30 |    126800 |            0.02 |
-|   Others       |     0.000 |       13 |       --- |             --- |
-| Signals        |    <0.001 |       46 |       --- |             --- |
-| I/O            |     0.012 |       24 |       210 |           11.43 |
+| Slice Logic    |    <0.001 |       59 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       22 |     63400 |            0.03 |
+|   Register     |    <0.001 |       22 |    126800 |            0.02 |
+|   Others       |     0.000 |        5 |       --- |             --- |
+| Signals        |    <0.001 |       36 |       --- |             --- |
+| I/O            |    <0.001 |       24 |       210 |           11.43 |
 | Static Power   |     0.097 |          |           |                 |
-| Total          |     0.110 |          |           |                 |
+| Total          |     0.098 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,8 +71,8 @@ Table of Contents
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Vccint    |       1.000 |     0.016 |       0.001 |      0.015 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.019 |       0.000 |      0.018 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.007 |       0.003 |      0.004 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -139,7 +139,7 @@ Table of Contents
 +---------+-----------+
 | Name    | Power (W) |
 +---------+-----------+
-| Wrapper |     0.013 |
+| Wrapper |     0.001 |
 +---------+-----------+
 
 

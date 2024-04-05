@@ -86,9 +86,9 @@ module processor(
 		.y()); 			   // Y Coordinate (from top)	
 	
 	//Temp
-	assign VGA_B = 4'b0000;
-	assign VGA_G = 4'b1111;
-	assign VGA_R = 4'b1111;
+	assign VGA_B = 4'b0001;
+	assign VGA_G = 4'b0101;
+	assign VGA_R = 4'b1101;
 
     //FOR TESTING
     output [31:0] out_pc; 
