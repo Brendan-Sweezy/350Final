@@ -1,0 +1,337 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Fri Apr  5 10:39:52 2024
+# Process ID: 12844
+# Current directory: C:/Users/bs299/Desktop/ECE350/processor/processor.runs/synth_1
+# Command line: vivado.exe -log Wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Wrapper.tcl
+# Log file: C:/Users/bs299/Desktop/ECE350/processor/processor.runs/synth_1/Wrapper.vds
+# Journal file: C:/Users/bs299/Desktop/ECE350/processor/processor.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Wrapper.tcl -notrace
+Command: synth_design -top Wrapper -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3328
+WARNING: [Synth 8-6901] identifier 'wd_zero' is used before its declaration [C:/Users/bs299/Desktop/ECE350/processor/processor/multdiv.v:24]
+WARNING: [Synth 8-992] reset is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:98]
+WARNING: [Synth 8-992] x is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:143]
+WARNING: [Synth 8-992] y is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:144]
+WARNING: [Synth 8-992] d_dataB is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:149]
+WARNING: [Synth 8-992] d_stall is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:151]
+WARNING: [Synth 8-992] dx_rd is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:162]
+WARNING: [Synth 8-992] x_error_code is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:172]
+WARNING: [Synth 8-992] x_ALU_result is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:172]
+WARNING: [Synth 8-992] x_shifted_target is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:172]
+WARNING: [Synth 8-992] x_result is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:172]
+WARNING: [Synth 8-992] x_jal is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:174]
+WARNING: [Synth 8-992] x_writ is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:174]
+WARNING: [Synth 8-992] x_do_branch is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:174]
+WARNING: [Synth 8-992] x_do_jump is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:174]
+WARNING: [Synth 8-992] x_continue is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:174]
+WARNING: [Synth 8-992] x_overflow is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:174]
+WARNING: [Synth 8-992] x_loading is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:174]
+WARNING: [Synth 8-992] xm_rd is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:185]
+WARNING: [Synth 8-992] m_writ is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:196]
+WARNING: [Synth 8-992] m_jal is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:196]
+WARNING: [Synth 8-992] m_write_back is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:197]
+WARNING: [Synth 8-992] mw_rd is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:209]
+WARNING: [Synth 8-992] w_writeData is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:219]
+WARNING: [Synth 8-992] w_loading is already implicitly declared earlier [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:221]
+WARNING: [Synth 8-6901] identifier 'w_pc' is used before its declaration [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:95]
+WARNING: [Synth 8-6901] identifier 'is_jal' is used before its declaration [C:/Users/bs299/Desktop/ECE350/processor/processor/x_control.v:16]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1329.258 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Wrapper' [C:/Users/bs299/Desktop/ECE350/processor/processor/Wrapper.v:27]
+INFO: [Synth 8-6157] synthesizing module 'processor' [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:20]
+INFO: [Synth 8-6157] synthesizing module 'VGATimingGenerator' [C:/Users/bs299/Desktop/ECE350/lab_6/VGATimingGenerator.v:2]
+	Parameter HEIGHT bound to: 480 - type: integer 
+	Parameter WIDTH bound to: 640 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'VGATimingGenerator' (1#1) [C:/Users/bs299/Desktop/ECE350/lab_6/VGATimingGenerator.v:2]
+INFO: [Synth 8-6157] synthesizing module 'register' [C:/Users/bs299/Desktop/ECE350/processor/processor/register.v:1]
+INFO: [Synth 8-6157] synthesizing module 'dffe_ref' [C:/Users/bs299/Desktop/ECE350/processor/processor/dffe_ref.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'dffe_ref' (2#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/dffe_ref.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'register' (3#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/register.v:1]
+INFO: [Synth 8-6157] synthesizing module 'cla_adder_32' [C:/Users/bs299/Desktop/ECE350/processor/processor/cla_adder_32.v:1]
+INFO: [Synth 8-6157] synthesizing module 'cla_adder_8' [C:/Users/bs299/Desktop/ECE350/processor/processor/cla_adder_8.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'cla_adder_8' (4#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/cla_adder_8.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'cla_adder_32' (5#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/cla_adder_32.v:1]
+INFO: [Synth 8-6157] synthesizing module 'instruction_decoder' [C:/Users/bs299/Desktop/ECE350/processor/processor/instruction_decoder.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sign_extender' [C:/Users/bs299/Desktop/ECE350/processor/processor/sign_extender.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sign_extender' (6#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/sign_extender.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'instruction_decoder' (7#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/instruction_decoder.v:1]
+INFO: [Synth 8-6157] synthesizing module 'f_control' [C:/Users/bs299/Desktop/ECE350/processor/processor/f_control.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'f_control' (8#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/f_control.v:1]
+INFO: [Synth 8-6157] synthesizing module 'd_control' [C:/Users/bs299/Desktop/ECE350/processor/processor/d_control.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'd_control' (9#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/d_control.v:1]
+INFO: [Synth 8-6157] synthesizing module 'alu' [C:/Users/bs299/Desktop/ECE350/processor/processor/alu.v:1]
+INFO: [Synth 8-6157] synthesizing module 'and_32' [C:/Users/bs299/Desktop/ECE350/processor/processor/and_32.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'and_32' (10#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/and_32.v:1]
+INFO: [Synth 8-6157] synthesizing module 'or_32' [C:/Users/bs299/Desktop/ECE350/processor/processor/or_32.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'or_32' (11#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/or_32.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sll' [C:/Users/bs299/Desktop/ECE350/processor/processor/sll.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_2_single' [C:/Users/bs299/Desktop/ECE350/processor/processor/mux_2_single.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_2_single' (12#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/mux_2_single.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll' (13#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/sll.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sra' [C:/Users/bs299/Desktop/ECE350/processor/processor/sra.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra' (14#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/sra.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_8' [C:/Users/bs299/Desktop/ECE350/processor/processor/mux_8.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_4' [C:/Users/bs299/Desktop/ECE350/processor/processor/mux_4.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_2' [C:/Users/bs299/Desktop/ECE350/processor/processor/mux_2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_2' (15#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/mux_2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_4' (16#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/mux_4.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_8' (17#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/mux_8.v:1]
+INFO: [Synth 8-6157] synthesizing module 'negate_32' [C:/Users/bs299/Desktop/ECE350/processor/processor/negate_32.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'negate_32' (18#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/negate_32.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (19#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/alu.v:1]
+INFO: [Synth 8-6157] synthesizing module 'multdiv' [C:/Users/bs299/Desktop/ECE350/processor/processor/multdiv.v:1]
+INFO: [Synth 8-6157] synthesizing module 'register_64' [C:/Users/bs299/Desktop/ECE350/processor/processor/register_64.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'register_64' (20#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/register_64.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_8_65' [C:/Users/bs299/Desktop/ECE350/processor/processor/mux_8_65.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_4_65' [C:/Users/bs299/Desktop/ECE350/processor/processor/mux_4_65.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_2_65' [C:/Users/bs299/Desktop/ECE350/processor/processor/mux_2_65.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_2_65' (21#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/mux_2_65.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_4_65' (22#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/mux_4_65.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_8_65' (23#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/mux_8_65.v:1]
+INFO: [Synth 8-6157] synthesizing module 'counter_64' [C:/Users/bs299/Desktop/ECE350/processor/processor/counter_64.v:1]
+INFO: [Synth 8-6157] synthesizing module 'tff' [C:/Users/bs299/Desktop/ECE350/processor/processor/tff.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'tff' (24#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/tff.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'counter_64' (25#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/counter_64.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'multdiv' (26#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/multdiv.v:1]
+INFO: [Synth 8-6157] synthesizing module 'x_control' [C:/Users/bs299/Desktop/ECE350/processor/processor/x_control.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'x_control' (27#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/x_control.v:1]
+INFO: [Synth 8-6157] synthesizing module 'm_control' [C:/Users/bs299/Desktop/ECE350/processor/processor/m_control.v:1]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [C:/Users/bs299/Desktop/ECE350/processor/processor/m_control.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'm_control' (28#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/m_control.v:1]
+INFO: [Synth 8-6157] synthesizing module 'w_control' [C:/Users/bs299/Desktop/ECE350/processor/processor/w_control.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'w_control' (29#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/w_control.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'processor' (30#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v:20]
+INFO: [Synth 8-6157] synthesizing module 'ROM' [C:/Users/bs299/Desktop/ECE350/processor/processor/ROM.v:2]
+	Parameter MEMFILE bound to: 40'b0000000000101110011011010110010101101101 
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file '.mem'; please make sure the file is added to project and has read permission, ignoring [C:/Users/bs299/Desktop/ECE350/processor/processor/ROM.v:11]
+	1: Unable to determine number of words or word size in RAM. 
+	2: No valid read/write found for RAM. 
+RAM dissolved into registers
+INFO: [Synth 8-6155] done synthesizing module 'ROM' (31#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/ROM.v:2]
+INFO: [Synth 8-6157] synthesizing module 'regfile' [C:/Users/bs299/Desktop/ECE350/processor/processor/regfile.v:1]
+INFO: [Synth 8-6157] synthesizing module 'tristate_32' [C:/Users/bs299/Desktop/ECE350/processor/processor/tristate_32.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'tristate_32' (32#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/tristate_32.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'regfile' (33#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/regfile.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RAM' [C:/Users/bs299/Desktop/ECE350/processor/processor/RAM.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'RAM' (34#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/RAM.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Wrapper' (35#1) [C:/Users/bs299/Desktop/ECE350/processor/processor/Wrapper.v:27]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1332.047 ; gain = 2.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1332.047 ; gain = 2.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1332.047 ; gain = 2.789
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.272 . Memory (MB): peak = 1332.047 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/bs299/Desktop/ECE350/processor/master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'BTNL'. [C:/Users/bs299/Desktop/ECE350/processor/master.xdc:77]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/bs299/Desktop/ECE350/processor/master.xdc:77]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Designutils 20-1307] Command '//' is not supported in the xdc constraint file. [C:/Users/bs299/Desktop/ECE350/processor/master.xdc:174]
+Finished Parsing XDC File [C:/Users/bs299/Desktop/ECE350/processor/master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/bs299/Desktop/ECE350/processor/master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1556.879 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1556.879 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1556.879 ; gain = 227.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1556.879 ; gain = 227.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1556.879 ; gain = 227.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1556.879 ; gain = 227.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   10 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   3 Input      1 Bit         XORs := 384   
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 2     
+	               10 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1646  
++---RAMs : 
+	             128K Bit	(4096 X 32 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input   65 Bit        Muxes := 8     
+	   2 Input   64 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 47    
+	   2 Input   10 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 643   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1556.879 ; gain = 227.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1556.879 ; gain = 227.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1556.879 ; gain = 227.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1556.879 ; gain = 227.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1556.879 ; gain = 227.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1556.879 ; gain = 227.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1556.879 ; gain = 227.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1556.879 ; gain = 227.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1556.879 ; gain = 227.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1556.879 ; gain = 227.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     5|
+|3     |LUT2 |     5|
+|4     |LUT3 |     3|
+|5     |LUT4 |     7|
+|6     |LUT5 |    10|
+|7     |LUT6 |    12|
+|8     |FDCE |    28|
+|9     |FDRE |     2|
+|10    |IBUF |     2|
+|11    |OBUF |    22|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1556.879 ; gain = 227.621
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:33 . Memory (MB): peak = 1556.879 ; gain = 2.789
+Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 1556.879 ; gain = 227.621
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1556.879 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1556.879 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: e5a6792e
+INFO: [Common 17-83] Releasing license: Synthesis
+83 Infos, 29 Warnings, 3 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1556.879 ; gain = 227.621
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint 'C:/Users/bs299/Desktop/ECE350/processor/processor.runs/synth_1/Wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Wrapper_utilization_synth.rpt -pb Wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Apr  5 10:40:38 2024...
