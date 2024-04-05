@@ -3,6 +3,9 @@
 #r1 = v0
 #r2 = a0
 #r4 = main board
+
+#r26, 27 switch inputs
+#r28 - ready input
 #r29 = Heap Pointer
 #r30 = Status Register
 #r31 = Return Address
@@ -12,8 +15,114 @@ nop
 nop
 nop
 nop
-addi $29, $0, 3840
+addi $29, $0, 3800
 j createBoard
+
+switch1:                #Translate switch 1 reg to log2(switch1reg)
+
+addi $20, $0, 1
+bne $26, $20, j_0
+addi $1, $0, 0
+jr $ra
+j_0:
+
+addi $20, $0, 2
+bne $26, $20, j_1
+addi $1, $0, 1
+jr $ra
+j_1:
+
+addi $20, $0, 4
+bne $26, $20, j_2
+addi $1, $0, 2
+jr $ra
+j_2:
+
+addi $20, $0, 8
+bne $26, $20, j_3
+addi $1, $0, 3
+jr $ra
+j_3:
+
+addi $20, $0, 16
+bne $26, $20, j_4
+addi $1, $0, 4
+jr $ra
+j_4:
+
+addi $20, $0, 32
+bne $26, $20, j_5
+addi $1, $0, 5
+jr $ra
+j_5:
+
+addi $20, $0, 64
+bne $26, $20, j_6
+addi $1, $0, 6
+jr $ra
+j_6:
+
+addi $20, $0, 128
+bne $26, $20, j_7
+addi $1, $0, 7
+jr $ra
+j_7:
+
+add $1, $0, $0
+jr $ra
+
+switch2:                        #Translate switch 2 reg to log2(switch2reg)
+
+addi $20, $0, 1
+bne $27, $20, j_0
+addi $1, $0, 0
+jr $ra
+j_0:
+
+addi $20, $0, 2
+bne $27, $20, j_1
+addi $1, $0, 1
+jr $ra
+j_1:
+
+addi $20, $0, 4
+bne $27, $20, j_2
+addi $1, $0, 2
+jr $ra
+j_2:
+
+addi $20, $0, 8
+bne $27, $20, j_3
+addi $1, $0, 3
+jr $ra
+j_3:
+
+addi $20, $0, 16
+bne $27, $20, j_4
+addi $1, $0, 4
+jr $ra
+j_4:
+
+addi $20, $0, 32
+bne $27, $20, j_5
+addi $1, $0, 5
+jr $ra
+j_5:
+
+addi $20, $0, 64
+bne $27, $20, j_6
+addi $1, $0, 6
+jr $ra
+j_6:
+
+addi $20, $0, 128
+bne $27, $20, j_7
+addi $1, $0, 7
+jr $ra
+j_7:
+
+add $1, $0, $0
+jr $ra
 
 malloc:
 sub $29, $29, $2        #Add stack pointer by the a0 return v0
@@ -63,21 +172,30 @@ sw $7, 41($1)
 j mainLoop
 
 playerMove:
-addi $7, $0, $0         #Reg 7 wait until ready button pressed
-addi $8, $0, 1
-rdyLoop1:
-rdy $7                  #TODO IMPLEMENT THIS IN HARDWARE
-blt $7, $8, rdyLoop1
-swt $9, 0               #Store in $9-x, $10-y from switches
-swt $10, 1              #TODO IMPLEMENT IN HARDWARE
+sw $ra, 3840($0)
 
-addi $7, $0, $0         #Reg 7 wait until ready button pressed
-addi $8, $0, 1
+#addi $7, $0, $0         #Reg 7 wait until ready button pressed
+#addi $8, $0, 1
+rdyLoop1:
+addi $7, $0, 1                 
+bne $7, $28, rdyLoop1
+
+jal switch1
+add $9, $1, $0
+jal switch2
+add $10, $1, $0          #Store in $9-x, $10-y from switches
+
+
+#addi $7, $0, $0         #Reg 7 wait until ready button pressed
+#addi $8, $0, 1
 rdyLoop2:
-rdy $7                  #TODO IMPLEMENT THIS IN HARDWARE
-blt $7, $8, rdyLoop2
-swt $11, 0              #Store in $11-x, $12-y from switches
-swt $12, 1              #TODO IMPLEMENT IN HARDWARE
+addi $7, $0, 1                 
+bne $7, $28, rdyLoop2
+
+jal switch1
+add $11, $1, $0
+jal switch2
+add $12, $1, $0          #Store in $11-x, $12-y from switches
 
 addi $7, $0, 8          #$9 becomes start location
 mul $9, $9, $7
@@ -153,12 +271,10 @@ sw $0, 0($13)
 
 delete_4:
 
+lw $ra, 3840($0)
 jr $ra
 
 
-
-
-#TODO, implement deleting a piece if it was a jump
 
 
 printBoard:

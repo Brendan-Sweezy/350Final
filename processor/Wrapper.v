@@ -24,9 +24,10 @@
  *
  **/
 
-module Wrapper (CLK100MHZ, BTNC, LED, hSync, vSync, VGA_B, VGA_G, VGA_R);
-	input CLK100MHZ, BTNC;
-	output[7:0] LED;
+module Wrapper (CLK100MHZ, BTNC, BTNR, LED, hSync, vSync, VGA_B, VGA_G, VGA_R, SW);
+	input CLK100MHZ, BTNC, BTNR;
+	input[15:0] SW;
+	output[15:0] LED;
 	output vSync; 		// H Sync Signal
 	output hSync; 		// Veritcal Sync Signal
 	output[3:0] VGA_R;  // Red Signal Bits
@@ -37,13 +38,17 @@ module Wrapper (CLK100MHZ, BTNC, LED, hSync, vSync, VGA_B, VGA_G, VGA_R);
 	wire[4:0] rd, rs1, rs2;
 	wire[31:0] instAddr, instData, 
 		rData, regA, regB,
-		memAddr, memDataIn, memDataOut, pc;
+		memAddr, memDataIn, memDataOut, pc, reg26, reg27, reg28;
 		
 	assign clock = CLK100MHZ;
 	assign reset = BTNC;
     
-    assign LED[0] = vSync;
-    assign LED[1] = hSync;
+    //assign LED[7:0] = SW[7:0];
+    assign LED[7:0] = reg26[7:0];
+    assign LED[14:8] = reg27[6:0];
+    assign LED[15] = reg28[0];
+    //assign LED[0] = vSync;
+    //assign LED[1] = hSync;
     
     //assign LED = pc[7:0];
     //assign LED = 8'b10101010;
@@ -80,7 +85,9 @@ module Wrapper (CLK100MHZ, BTNC, LED, hSync, vSync, VGA_B, VGA_G, VGA_R);
 		.ctrl_writeEnable(rwe), .ctrl_reset(reset), 
 		.ctrl_writeReg(rd),
 		.ctrl_readRegA(rs1), .ctrl_readRegB(rs2), 
-		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB));
+		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB),
+		.SW(SW), .BTNR(BTNR),
+		.reg26(reg26), .reg27(reg27), .reg28(reg28));
 						
 	// Processor Memory (RAM)
 	RAM ProcMem(.clk(clock), 
