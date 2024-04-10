@@ -4,7 +4,7 @@ module regfile (
 	ctrl_readRegA, ctrl_readRegB, data_writeReg,
 	data_readRegA, data_readRegB,
 	SW, BTNR,
-	reg26, reg27, reg28
+	reg26, reg27, reg28, reg25
 );
 
 	input clock, ctrl_writeEnable, ctrl_reset, BTNR;
@@ -12,7 +12,7 @@ module regfile (
 	input [31:0] data_writeReg;
 	input [15:0] SW;
 
-	output [31:0] data_readRegA, data_readRegB, reg26, reg27, reg28;
+	output [31:0] data_readRegA, data_readRegB, reg26, reg27, reg28, reg25;
 
 	wire [31:0] readA, readB, write;
 
@@ -32,7 +32,7 @@ module regfile (
 	//Registers 1-31
 	genvar i;
     generate
-        for(i = 1; i < 26; i = i + 1) begin: registers
+        for(i = 1; i < 25; i = i + 1) begin: registers
             wire [31:0] w0;
 			wire w1;
 			and and_0(w1, write[i], ctrl_writeEnable);
@@ -41,6 +41,15 @@ module regfile (
 			tristate_32 triTwo(.out(data_readRegB), .in(w0), .select(readB[i]));
         end
     endgenerate
+    
+    //Reg 25
+    wire [31:0] w_25_0;
+    wire w_25_1;
+	and and_0_25(w_25_1, write[25], ctrl_writeEnable);
+	register register25(.q(w_25_0), .d(data_writeReg), .clk(clock), .write(w_25_1), .reset(ctrl_reset));		
+	tristate_32 triOne_25(.out(data_readRegA), .in(w_25_0), .select(readA[25]));
+	tristate_32 triTwo_25(.out(data_readRegB), .in(w_25_0), .select(readB[25]));
+	assign reg25 = w_25_0;
     
     //Reg 26
     wire [31:0] w_26_0;

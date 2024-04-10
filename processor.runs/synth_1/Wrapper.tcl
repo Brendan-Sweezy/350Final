@@ -72,6 +72,7 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -86,6 +87,10 @@ set_property ip_output_repo c:/Users/bs299/Desktop/ECE350/processor/processor.ca
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
+read_mem {
+  C:/Users/bs299/Desktop/ECE350/processor/reg25test.mem
+  {C:/Users/bs299/Desktop/ECE350/processor/processor/Test Files/Assembly Files/checkersbasic.mem}
+}
 read_verilog -library xil_defaultlib {
   C:/Users/bs299/Desktop/ECE350/processor/processor/RAM.v
   C:/Users/bs299/Desktop/ECE350/processor/processor/ROM.v

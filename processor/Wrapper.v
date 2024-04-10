@@ -38,15 +38,16 @@ module Wrapper (CLK100MHZ, BTNC, BTNR, LED, hSync, vSync, VGA_B, VGA_G, VGA_R, S
 	wire[4:0] rd, rs1, rs2;
 	wire[31:0] instAddr, instData, 
 		rData, regA, regB,
-		memAddr, memDataIn, memDataOut, pc, reg26, reg27, reg28;
+		memAddr, memDataIn, memDataOut, pc, reg26, reg27, reg28, reg25;
 		
 	assign clock = CLK100MHZ;
 	assign reset = BTNC;
     
+    assign LED[15:0] = reg25[15:0];
     //assign LED[7:0] = SW[7:0];
-    assign LED[7:0] = reg26[7:0];
-    assign LED[14:8] = reg27[6:0];
-    assign LED[15] = reg28[0];
+    //assign LED[7:0] = reg26[7:0];
+    //assign LED[14:8] = reg27[6:0];
+    //assign LED[15] = reg28[0];
     //assign LED[0] = vSync;
     //assign LED[1] = hSync;
     
@@ -54,7 +55,7 @@ module Wrapper (CLK100MHZ, BTNC, BTNR, LED, hSync, vSync, VGA_B, VGA_G, VGA_R, S
     //assign LED = 8'b10101010;
 
 	// ADD YOUR MEMORY FILE HERE
-	localparam INSTR_FILE = "";
+	localparam INSTR_FILE = "checkersbasic";
 	
 	// Main Processing Unit
 	processor CPU(.clock(clock), .reset(reset), 
@@ -87,7 +88,7 @@ module Wrapper (CLK100MHZ, BTNC, BTNR, LED, hSync, vSync, VGA_B, VGA_G, VGA_R, S
 		.ctrl_readRegA(rs1), .ctrl_readRegB(rs2), 
 		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB),
 		.SW(SW), .BTNR(BTNR),
-		.reg26(reg26), .reg27(reg27), .reg28(reg28));
+		.reg26(reg26), .reg27(reg27), .reg28(reg28), .reg25(reg25));
 						
 	// Processor Memory (RAM)
 	RAM ProcMem(.clk(clock), 
