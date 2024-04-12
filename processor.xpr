@@ -391,13 +391,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/reg25test.mem">
+      <File Path="$PPRDIR/processor/Test Files/Memory Files/reg25test.mem">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/processor/Test Files/Assembly Files/checkersbasic.mem">
+      <File Path="$PPRDIR/checkersbasic.mem">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>

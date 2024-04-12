@@ -24,8 +24,9 @@
  *
  **/
 
-module Wrapper (CLK100MHZ, BTNC, BTNR, LED, hSync, vSync, VGA_B, VGA_G, VGA_R, SW);
+module Wrapper (CLK100MHZ, BTNC, BTNR, LED, hSync, vSync, VGA_B, VGA_G, VGA_R, SW, JA);
 	input CLK100MHZ, BTNC, BTNR;
+	input[11:0] JA;
 	input[15:0] SW;
 	output[15:0] LED;
 	output vSync; 		// H Sync Signal
@@ -43,7 +44,9 @@ module Wrapper (CLK100MHZ, BTNC, BTNR, LED, hSync, vSync, VGA_B, VGA_G, VGA_R, S
 	assign clock = CLK100MHZ;
 	assign reset = BTNC;
     
-    assign LED[15:0] = reg25[15:0];
+    
+    assign LED[0] = JA[3];
+    //assign LED[15:0] = reg25[15:0];
     //assign LED[7:0] = SW[7:0];
     //assign LED[7:0] = reg26[7:0];
     //assign LED[14:8] = reg27[6:0];

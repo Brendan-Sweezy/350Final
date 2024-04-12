@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1712715398">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1712933343">
   <File Type="PA-TCL" Name="Wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="Wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Wrapper_reports.tcl"/>
@@ -312,13 +312,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/reg25test.mem">
+    <File Path="$PPRDIR/processor/Test Files/Memory Files/reg25test.mem">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/processor/Test Files/Assembly Files/checkersbasic.mem">
+    <File Path="$PPRDIR/checkersbasic.mem">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
