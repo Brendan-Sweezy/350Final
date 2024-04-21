@@ -4,7 +4,7 @@ module regfile (
 	ctrl_readRegA, ctrl_readRegB, data_writeReg,
 	data_readRegA, data_readRegB,
 	SW, BTNR,
-	reg26, reg27, reg28
+	reg26, reg27, reg28, reg25, reg19, reg20, reg21, reg22, reg23, reg24, reg17, reg18
 );
 
 	input clock, ctrl_writeEnable, ctrl_reset, BTNR;
@@ -12,7 +12,7 @@ module regfile (
 	input [31:0] data_writeReg;
 	input [15:0] SW;
 
-	output [31:0] data_readRegA, data_readRegB, reg26, reg27, reg28;
+	output [31:0] data_readRegA, data_readRegB, reg26, reg27, reg28, reg25, reg19, reg20, reg21, reg22, reg23, reg24, reg17, reg18;
 
 	wire [31:0] readA, readB, write;
 
@@ -32,7 +32,7 @@ module regfile (
 	//Registers 1-31
 	genvar i;
     generate
-        for(i = 1; i < 26; i = i + 1) begin: registers
+        for(i = 1; i < 17; i = i + 1) begin: registers
             wire [31:0] w0;
 			wire w1;
 			and and_0(w1, write[i], ctrl_writeEnable);
@@ -41,6 +41,87 @@ module regfile (
 			tristate_32 triTwo(.out(data_readRegB), .in(w0), .select(readB[i]));
         end
     endgenerate
+    
+    //Reg 17
+    wire [31:0] w_17_0;
+    wire w_17_1;
+	and and_0_17(w_17_1, write[17], ctrl_writeEnable);
+	register register17(.q(w_17_0), .d(data_writeReg), .clk(clock), .write(w_17_1), .reset(ctrl_reset));		
+	tristate_32 triOne_17(.out(data_readRegA), .in(w_17_0), .select(readA[17]));
+	tristate_32 triTwo_17(.out(data_readRegB), .in(w_17_0), .select(readB[17]));
+	assign reg17 = w_17_0;
+    
+    //Reg 18
+    wire [31:0] w_18_0;
+    wire w_18_1;
+	and and_0_18(w_18_1, write[18], ctrl_writeEnable);
+	register register18(.q(w_18_0), .d(data_writeReg), .clk(clock), .write(w_18_1), .reset(ctrl_reset));		
+	tristate_32 triOne_18(.out(data_readRegA), .in(w_18_0), .select(readA[18]));
+	tristate_32 triTwo_18(.out(data_readRegB), .in(w_18_0), .select(readB[18]));
+	assign reg18 = w_18_0;
+    
+    //Reg 19
+    wire [31:0] w_19_0;
+    wire w_19_1;
+	and and_0_19(w_19_1, write[19], ctrl_writeEnable);
+	register register19(.q(w_19_0), .d(data_writeReg), .clk(clock), .write(w_19_1), .reset(ctrl_reset));		
+	tristate_32 triOne_19(.out(data_readRegA), .in(w_19_0), .select(readA[19]));
+	tristate_32 triTwo_19(.out(data_readRegB), .in(w_19_0), .select(readB[19]));
+	assign reg19 = w_19_0;
+	
+	//Reg 20
+    wire [31:0] w_20_0;
+    wire w_20_1;
+	and and_0_20(w_20_1, write[20], ctrl_writeEnable);
+	register register20(.q(w_20_0), .d(data_writeReg), .clk(clock), .write(w_20_1), .reset(ctrl_reset));		
+	tristate_32 triOne_20(.out(data_readRegA), .in(w_20_0), .select(readA[20]));
+	tristate_32 triTwo_20(.out(data_readRegB), .in(w_20_0), .select(readB[20]));
+	assign reg20 = w_20_0;
+	
+	//Reg 21
+    wire [31:0] w_21_0;
+    wire w_21_1;
+	and and_0_21(w_21_1, write[21], ctrl_writeEnable);
+	register register21(.q(w_21_0), .d(data_writeReg), .clk(clock), .write(w_21_1), .reset(ctrl_reset));		
+	tristate_32 triOne_21(.out(data_readRegA), .in(w_21_0), .select(readA[21]));
+	tristate_32 triTwo_21(.out(data_readRegB), .in(w_21_0), .select(readB[21]));
+	assign reg21 = w_21_0;
+	
+	//Reg 22
+    wire [31:0] w_22_0;
+    wire w_22_1;
+	and and_0_22(w_22_1, write[22], ctrl_writeEnable);
+	register register22(.q(w_22_0), .d(data_writeReg), .clk(clock), .write(w_22_1), .reset(ctrl_reset));		
+	tristate_32 triOne_22(.out(data_readRegA), .in(w_22_0), .select(readA[22]));
+	tristate_32 triTwo_22(.out(data_readRegB), .in(w_22_0), .select(readB[22]));
+	assign reg22 = w_22_0;
+    
+    //Reg 23
+    wire [31:0] w_23_0;
+    wire w_23_1;
+	and and_0_23(w_23_1, write[23], ctrl_writeEnable);
+	register register23(.q(w_23_0), .d(data_writeReg), .clk(clock), .write(w_23_1), .reset(ctrl_reset));		
+	tristate_32 triOne_23(.out(data_readRegA), .in(w_23_0), .select(readA[23]));
+	tristate_32 triTwo_23(.out(data_readRegB), .in(w_23_0), .select(readB[23]));
+	assign reg23 = w_23_0;
+    
+    //Reg 24
+    wire [31:0] w_24_0;
+    wire w_24_1;
+	and and_0_24(w_24_1, write[24], ctrl_writeEnable);
+	register register24(.q(w_24_0), .d(data_writeReg), .clk(clock), .write(w_24_1), .reset(ctrl_reset));		
+	tristate_32 triOne_24(.out(data_readRegA), .in(w_24_0), .select(readA[24]));
+	tristate_32 triTwo_24(.out(data_readRegB), .in(w_24_0), .select(readB[24]));
+	assign reg24 = w_24_0;
+    
+    //Reg 25
+    wire [31:0] w_25_0;
+    wire w_25_1;
+	and and_0_25(w_25_1, write[25], ctrl_writeEnable);
+	register register25(.q(w_25_0), .d(data_writeReg), .clk(clock), .write(w_25_1), .reset(ctrl_reset));		
+	tristate_32 triOne_25(.out(data_readRegA), .in(w_25_0), .select(readA[25]));
+	tristate_32 triTwo_25(.out(data_readRegB), .in(w_25_0), .select(readB[25]));
+	assign reg25 = w_25_0;
     
     //Reg 26
     wire [31:0] w_26_0;

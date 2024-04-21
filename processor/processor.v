@@ -42,53 +42,18 @@ module processor(
     data_readRegB,                   // I: Data from port B of RegFile
 	
 	//OUTPUT
-	out_pc,
+	out_pc
 	
-	//VGA
-    hSync, vSync,
-    VGA_B, VGA_G, VGA_R
+	
 	 
 	);
 
     //VGA Outputs
-    output hSync; 		// H Sync Signal
-	output vSync; 		// Veritcal Sync Signal
-	output[3:0] VGA_R;  // Red Signal Bits
-	output[3:0] VGA_G;  // Green Signal Bits
-	output[3:0] VGA_B;  // Blue Signal Bits
+    
 	
 	wire active;
 	
-	wire clk25; // 25MHz clock
-
-	reg[1:0] pixCounter = 0;      // Pixel counter to divide the clock
-    assign clk25 = pixCounter[1]; // Set the clock high whenever the second bit (2) is high
-	always @(posedge clock) begin
-		pixCounter <= pixCounter + 1; // Since the reg is only 3 bits, it will reset every 8 cycles
-	end
 	
-	//VGA
-    localparam 
-		VIDEO_WIDTH = 640,  // Standard VGA Width
-		VIDEO_HEIGHT = 480; // Standard VGA Height
-    
-    VGATimingGenerator #(
-		.HEIGHT(VIDEO_HEIGHT), // Use the standard VGA Values
-		.WIDTH(VIDEO_WIDTH))
-	Display( 
-		.clk25(clk25),  	   // 25MHz Pixel Clock
-		.reset(reset),		   // Reset Signal
-		.screenEnd(), // High for one cycle when between two frames
-		.active(active),	   // High when drawing pixels
-		.hSync(hSync),  	   // Set Generated H Signal
-		.vSync(vSync),		   // Set Generated V Signal
-		.x(), 				   // X Coordinate (from left)
-		.y()); 			   // Y Coordinate (from top)	
-	
-	//Temp
-	assign VGA_B = 4'b0001;
-	assign VGA_G = 4'b0101;
-	assign VGA_R = 4'b1101;
 
     //FOR TESTING
     output [31:0] out_pc; 

@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/bs299/Desktop/ECE350/processor/processor.runs/synth_1/Wrapper.tcl"
+  variable script "C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/synth_1/Wrapper.tcl"
   variable category "vivado_synth"
 }
 
@@ -78,50 +78,56 @@ create_project -in_memory -part xc7a100tcsg324-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/bs299/Desktop/ECE350/processor/processor.cache/wt [current_project]
-set_property parent.project_path C:/Users/bs299/Desktop/ECE350/processor/processor.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.cache/wt [current_project]
+set_property parent.project_path C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo c:/Users/bs299/Desktop/ECE350/processor/processor.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
+read_mem {
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/ascii.mem
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/sprites.mem
+  C:/Users/bs299/Desktop/crown.mem
+}
 read_verilog -library xil_defaultlib {
-  C:/Users/bs299/Desktop/ECE350/processor/processor/RAM.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/ROM.v
+  C:/Users/bs299/Downloads/IRAM.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/RAM.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/ROM.v
   C:/Users/bs299/Desktop/ECE350/lab_6/VGATimingGenerator.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/alu.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/and_32.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/cla_adder_32.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/cla_adder_8.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/counter_64.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/d_control.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/dffe_ref.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/f_control.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/instruction_decoder.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/m_control.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/multdiv.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/mux_2.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/mux_2_65.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/mux_2_single.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/mux_4.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/mux_4_65.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/mux_8.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/mux_8_65.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/negate_32.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/or_32.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/processor.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/regfile.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/register.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/register_64.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/sign_extender.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/sll.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/sra.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/tff.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/tristate_32.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/w_control.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/x_control.v
-  C:/Users/bs299/Desktop/ECE350/processor/processor/Wrapper.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/alu.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/and_32.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/cla_adder_32.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/cla_adder_8.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/counter_64.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/d_control.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/dffe_ref.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/f_control.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/instruction_decoder.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/m_control.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/multdiv.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/mux_2.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/mux_2_65.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/mux_2_single.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/mux_4.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/mux_4_65.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/mux_8.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/mux_8_65.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/negate_32.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/or_32.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/processor.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/regfile.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/register.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/register_64.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/sign_extender.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/sll.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/sra.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/tff.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/tristate_32.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/w_control.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/x_control.v
+  C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor/Wrapper.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -132,8 +138,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/bs299/Desktop/ECE350/processor/master.xdc
-set_property used_in_implementation false [get_files C:/Users/bs299/Desktop/ECE350/processor/master.xdc]
+read_xdc C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/master.xdc
+set_property used_in_implementation false [get_files C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

@@ -1,0 +1,69 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Tue Apr  9 20:32:06 2024
+# Process ID: 10456
+# Current directory: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13256 C:\Users\bs299\Desktop\ECE350\Work-VGA\350Final\350Final\processor.xpr
+# Log file: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/vivado.log
+# Journal file: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/impl_1/Wrapper.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/impl_1/Wrapper.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/impl_1/Wrapper.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+close_hw_manager
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/impl_1/Wrapper.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/impl_1/Wrapper.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+close_hw_manager
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+add_files -norecurse {C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/VGATimingGenerator.v C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/IRAM.v C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/RAM.v C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/ROM.v}
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+add_files -norecurse {C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/ascii.mem C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/image.mem C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/sprites.mem C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/colors.mem}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1

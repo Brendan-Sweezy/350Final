@@ -1,0 +1,141 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Tue Apr  9 20:32:06 2024
+# Process ID: 10456
+# Current directory: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13256 C:\Users\bs299\Desktop\ECE350\Work-VGA\350Final\350Final\processor.xpr
+# Log file: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/vivado.log
+# Journal file: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/bs299/Desktop/ECE350/processor' since last save.
+WARNING: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.gen/sources_1', nor could it be found using path 'C:/Users/bs299/Desktop/ECE350/processor/processor.gen/sources_1'.
+INFO: [filemgmt 56-1] IPUserFilesDir: Directory not found as 'C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.ip_user_files'; using path 'C:/Users/bs299/Desktop/ECE350/processor/processor.ip_user_files' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/lab_6/VGATimingGenerator.v'; using path 'C:/Users/bs299/Desktop/ECE350/lab_6/VGATimingGenerator.v' instead.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-312] File not found as 'C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/lab_6/VGATimingGenerator.v'; using path 'C:/Users/bs299/Desktop/ECE350/lab_6/VGATimingGenerator.v' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/lab_6/VGATimingGenerator.v'; using path 'C:/Users/bs299/Desktop/ECE350/lab_6/VGATimingGenerator.v' instead.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.1/data/ip'.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 1329.992 ; gain = 0.000
+update_compile_order -fileset sources_1
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Tue Apr  9 20:32:37 2024] Launched synth_1...
+Run output will be captured here: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/synth_1/runme.log
+[Tue Apr  9 20:32:37 2024] Launched impl_1...
+Run output will be captured here: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3414] Connected to existing cs_server.
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292B7F269A
+set_property PROGRAM.FILE {C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/impl_1/Wrapper.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/impl_1/Wrapper.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/impl_1/Wrapper.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw_manager
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3414] Connected to existing cs_server.
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292B7F269A
+set_property PROGRAM.FILE {C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/impl_1/Wrapper.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/impl_1/Wrapper.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw_manager
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Tue Apr  9 20:45:07 2024] Launched synth_1...
+Run output will be captured here: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/synth_1/runme.log
+[Tue Apr  9 20:45:07 2024] Launched impl_1...
+Run output will be captured here: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/impl_1/runme.log
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Tue Apr  9 20:47:07 2024] Launched synth_1...
+Run output will be captured here: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/synth_1/runme.log
+[Tue Apr  9 20:47:08 2024] Launched impl_1...
+Run output will be captured here: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/impl_1/runme.log
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Tue Apr  9 20:48:33 2024] Launched synth_1...
+Run output will be captured here: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/synth_1/runme.log
+[Tue Apr  9 20:48:33 2024] Launched impl_1...
+Run output will be captured here: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/impl_1/runme.log
+add_files -norecurse {C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/VGATimingGenerator.v C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/IRAM.v C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/RAM.v C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/ROM.v}
+update_compile_order -fileset sources_1
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Tue Apr  9 20:50:14 2024] Launched synth_1...
+Run output will be captured here: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/synth_1/runme.log
+[Tue Apr  9 20:50:14 2024] Launched impl_1...
+Run output will be captured here: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/impl_1/runme.log
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Tue Apr  9 20:54:47 2024] Launched synth_1...
+Run output will be captured here: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/synth_1/runme.log
+[Tue Apr  9 20:54:48 2024] Launched impl_1...
+Run output will be captured here: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/impl_1/runme.log
+add_files -norecurse {C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/ascii.mem C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/image.mem C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/sprites.mem C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/colors.mem}
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Tue Apr  9 20:56:42 2024] Launched synth_1...
+Run output will be captured here: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/synth_1/runme.log
+[Tue Apr  9 20:56:42 2024] Launched impl_1...
+Run output will be captured here: C:/Users/bs299/Desktop/ECE350/Work-VGA/350Final/350Final/processor.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  9 22:39:02 2024...
