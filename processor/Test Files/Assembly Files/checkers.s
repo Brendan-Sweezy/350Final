@@ -21,50 +21,50 @@ j createBoard
 
 switch1:                #Translate switch 1 reg to log2(switch1reg)
 
-addi $20, $0, 1
-bne $26, $20, j_0
+addi $15, $0, 1
+bne $26, $15, j_0
 addi $1, $0, 0
 jr $ra
 j_0:
 
-addi $20, $0, 2
-bne $26, $20, j_1
+addi $15, $0, 2
+bne $26, $15, j_1
 addi $1, $0, 1
 jr $ra
 j_1:
 
-addi $20, $0, 4
-bne $26, $20, j_2
+addi $15, $0, 4
+bne $26, $15, j_2
 addi $1, $0, 2
 jr $ra
 j_2:
 
-addi $20, $0, 8
-bne $26, $20, j_3
+addi $15, $0, 8
+bne $26, $15, j_3
 addi $1, $0, 3
 jr $ra
 j_3:
 
-addi $20, $0, 16
-bne $26, $20, j_4
+addi $15, $0, 16
+bne $26, $15, j_4
 addi $1, $0, 4
 jr $ra
 j_4:
 
-addi $20, $0, 32
-bne $26, $20, j_5
+addi $15, $0, 32
+bne $26, $15, j_5
 addi $1, $0, 5
 jr $ra
 j_5:
 
-addi $20, $0, 64
-bne $26, $20, j_6
+addi $15, $0, 64
+bne $26, $15, j_6
 addi $1, $0, 6
 jr $ra
 j_6:
 
-addi $20, $0, 128
-bne $26, $20, j_7
+addi $15, $0, 128
+bne $26, $15, j_7
 addi $1, $0, 7
 jr $ra
 j_7:
@@ -74,53 +74,53 @@ jr $ra
 
 switch2:                        #Translate switch 2 reg to log2(switch2reg)
 
-addi $20, $0, 1
-bne $27, $20, j_0
+addi $15, $0, 1
+bne $27, $15, j_01
 addi $1, $0, 0
 jr $ra
-j_0:
+j_01:
 
-addi $20, $0, 2
-bne $27, $20, j_1
+addi $15, $0, 2
+bne $27, $15, j_11
 addi $1, $0, 1
 jr $ra
-j_1:
+j_11:
 
-addi $20, $0, 4
-bne $27, $20, j_2
+addi $15, $0, 4
+bne $27, $15, j_21
 addi $1, $0, 2
 jr $ra
-j_2:
+j_21:
 
-addi $20, $0, 8
-bne $27, $20, j_3
+addi $15, $0, 8
+bne $27, $15, j_31
 addi $1, $0, 3
 jr $ra
-j_3:
+j_31:
 
-addi $20, $0, 16
-bne $27, $20, j_4
+addi $15, $0, 16
+bne $27, $15, j_41
 addi $1, $0, 4
 jr $ra
-j_4:
+j_41:
 
-addi $20, $0, 32
-bne $27, $20, j_5
+addi $15, $0, 32
+bne $27, $15, j_51
 addi $1, $0, 5
 jr $ra
-j_5:
+j_51:
 
-addi $20, $0, 64
-bne $27, $20, j_6
+addi $15, $0, 64
+bne $27, $15, j_61
 addi $1, $0, 6
 jr $ra
-j_6:
+j_61:
 
-addi $20, $0, 128
-bne $27, $20, j_7
+addi $15, $0, 128
+bne $27, $15, j_71
 addi $1, $0, 7
 jr $ra
-j_7:
+j_71:
 
 add $1, $0, $0
 jr $ra
@@ -153,7 +153,7 @@ sw $7, 18($1)
 sw $7, 20($1)
 sw $7, 22($1)
 
-addi $7, $0, -1         #Store all the starting black pieces
+addi $7, $0, 2         #Store all the starting black pieces
 
 sw $7, 63($1)
 sw $7, 61($1)
@@ -181,11 +181,16 @@ rdyLoop1:
 addi $7, $0, 1                 
 bne $7, $28, rdyLoop1
 
+waitLoop1:
+addi, $7, $0, 0
+bne $7, $28, waitLoop1
+
 jal switch1
 add $9, $1, $0
 jal switch2
 add $10, $1, $0          #Store in $9-x, $10-y from switches
 
+jal sleep
 
 #addi $7, $0, $0         #Reg 7 wait until ready button pressed
 #addi $8, $0, 1
@@ -193,18 +198,32 @@ rdyLoop2:
 addi $7, $0, 1                 
 bne $7, $28, rdyLoop2
 
+waitLoop2:
+addi, $7, $0, 0
+bne $7, $28, waitLoop2
+
 jal switch1
+nop
 add $11, $1, $0
+add $17, $11, $0
+nop
 jal switch2
+nop
 add $12, $1, $0          #Store in $11-x, $12-y from switches
 
+add $18, $12, $0
+
+
 addi $7, $0, 8          #$9 becomes start location
-mul $9, $9, $7
+mul $10, $10, $7
 add $9, $9, $10
+#add $17, $9, $0
 
 addi $7, $0, 8          #$10 becomes end location
-mul $10, $11, $7
-add $10, $10, $12
+mul $10, $12, $7
+add $10, $10, $11
+
+
 
 add $9, $4, $9          #$11 becomes piece in start location
 lw $11, 0($9)
@@ -219,17 +238,17 @@ bne $13, $11, not_black
 addi $13, $0, 7
 blt $12, $13, not_black
 
-addi $13, $0, 2         #In this case promote to King
+addi $13, $0, 7         #In this case promote to King
 sw $13, 0($10)
 
 not_black:
 
-addi $13, $0, -1        #Jump past if not -1 in starting location, and not at row 7
+addi $13, $0, 2        #Jump past if not -1 in starting location, and not at row 7
 #sub $13, $11, $13      #Same for this one
 bne $13, $11, not_red
 bne $12, $0, not_red
 
-addi $13, $0, -2         #In this case promote to King
+addi $13, $0, 4         #In this case promote to King
 sw $13, 0($10)
 
 not_red:
@@ -255,7 +274,7 @@ delete_2:
 
 
 sub $13, $10, $9        #Skip ahead if not a jump up right
-addi $14, $0, -7
+addi $14, $0, -14
 bne $13, $14, delete_3
 
 addi $13, $9, -7         #Set to 0 position up right
@@ -264,7 +283,7 @@ sw $0, 0($13)
 delete_3:
 
 sub $13, $10, $9        #Skip ahead if not a jump up left
-addi $14, $0, -9
+addi $14, $0, -18
 bne $13, $14, delete_4
 
 addi $13, $9, -9         #Set to 0 position up left
@@ -318,7 +337,7 @@ sll $19, $19, 3
 lw $10, 7($4)
 add $19, $19, $10
 
-j end
+
 
 sll $19, $19, 3         #Second row
 lw $10, 8($4)
@@ -544,7 +563,7 @@ sll $25, $25, 3
 lw $10, 63($4)
 add $25, $25, $10
 
-
+jr $ra
 
 
 
@@ -556,11 +575,16 @@ mainLoop:
 nop
 nop
 nop
-j printBoard
 add $4, $1, $0
-jal                  #TODO IMPLEMENT HARDWARE TO PRINT TO VGA
+mainLoop2:
+nop
+jal printBoard                 #TODO IMPLEMENT HARDWARE TO PRINT TO VGA
+nop
 jal playerMove
-j mainLoop
+nop
+jal sleep
+nop
+j mainLoop2
 
 
 
@@ -572,3 +596,22 @@ nop
 nop
 j end
 
+
+
+sleep:
+add $3, $0, $0
+addi $16, $0, 10000000
+sleep_j:
+addi $3, $3, 1
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+bne $3, $16, sleep_j
+jr $ra

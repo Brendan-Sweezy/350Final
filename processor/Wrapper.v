@@ -45,7 +45,7 @@ module Wrapper (CLK100MHZ, BTNC, BTNR, LED, hSync, vSync, VGA_B, VGA_G, VGA_R, S
 	assign reset = BTNC;
     
     
-    assign LED[0] = JA[3];
+    assign LED[3:0] = JA[10:7];
     //assign LED[15:0] = reg25[15:0];
     //assign LED[7:0] = SW[7:0];
     //assign LED[7:0] = reg26[7:0];
