@@ -4,13 +4,13 @@ module regfile (
 	ctrl_readRegA, ctrl_readRegB, data_writeReg,
 	data_readRegA, data_readRegB,
 	SW, BTNR,
-	reg26, reg27, reg28, reg25, reg19, reg20, reg21, reg22, reg23, reg24, reg17, reg18
+	reg26, reg27, reg28, reg25, reg19, reg20, reg21, reg22, reg23, reg24, reg17, reg18, switches
 );
 
 	input clock, ctrl_writeEnable, ctrl_reset, BTNR;
 	input [4:0] ctrl_writeReg, ctrl_readRegA, ctrl_readRegB;
 	input [31:0] data_writeReg;
-	input [15:0] SW;
+	input [15:0] SW, switches;
 
 	output [31:0] data_readRegA, data_readRegB, reg26, reg27, reg28, reg25, reg19, reg20, reg21, reg22, reg23, reg24, reg17, reg18;
 
@@ -128,7 +128,7 @@ module regfile (
     wire w_26_1;
     wire[31:0] d_write_26;
     assign d_write_26[31:8] = 24'b0;
-    assign d_write_26[7:0] = SW[7:0];
+    assign d_write_26[7:0] = switches[7:0];
 	and and_0_26(w_26_1, write[26], ctrl_writeEnable);
 	register register26(.q(w_26_0), .d(d_write_26), .clk(clock), .write(1'b1), .reset(ctrl_reset));		
 	tristate_32 triOne_26(.out(data_readRegA), .in(w_26_0), .select(readA[26]));
@@ -140,7 +140,7 @@ module regfile (
     wire w_27_1;
     wire[31:0] d_write_27;
     assign d_write_27[31:8] = 24'b0;
-    assign d_write_27[7:0] = SW[15:8];
+    assign d_write_27[7:0] = switches[15:8];
 	and and_0_27(w_27_1, write[27], ctrl_writeEnable);
 	register register27(.q(w_27_0), .d(d_write_27), .clk(clock), .write(1'b1), .reset(ctrl_reset));		
 	tristate_32 triOne_27(.out(data_readRegA), .in(w_27_0), .select(readA[27]));

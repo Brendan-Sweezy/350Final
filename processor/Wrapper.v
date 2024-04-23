@@ -145,7 +145,7 @@ module Wrapper (CLK100MHZ, BTNC, BTNR, LED, hSync, vSync, VGA_B, VGA_G, VGA_R, S
 	wire[BITS_PER_COLOR-1:0] colorOut; 			  // Output color 
 	assign colorOut = active ? colorData : 12'd0; // When not active, output black
 
-    wire in_square = x > 509 && x < 549 && y > 11 && y < 51 && SW[0]; 
+    wire in_square = x > 509 && x < 549 && y > 11 && y < 51 && SW[0];
     wire[2:0] red = 3'b010;
     wire[2:0] black = 3'b001;
     wire[2:0] redK = 3'b100;
@@ -187,15 +187,42 @@ module Wrapper (CLK100MHZ, BTNC, BTNR, LED, hSync, vSync, VGA_B, VGA_G, VGA_R, S
                 || (x > 159 && x < 179 && y > 321 && y < 341 && reg23[26] == 1'b1) || (x > 279 && x < 299 && y > 321 && y < 341 && reg23[20] == 1'b1) || (x > 399 && x < 419 && y > 321 && y < 341 && reg23[14] == 1'b1) || (x > 519 && x < 539 && y > 321 && y < 341 && reg23[8] == 1'b1)
                 || (x > 159 && x < 179 && y > 441 && y < 461 && reg24[8] == 1'b1) || (x > 279 && x < 299 && y > 441 && y < 461 && reg24[2] == 1'b1) || (x > 399 && x < 419 && y > 441 && y < 461 && reg25[8] == 1'b1) || (x > 519 && x < 539 && y > 441 && y < 461 && reg25[2] == 1'b1);
 
+    wire in_selected = (x >= 80 && x < 140 && y > 0 && y < 60 && reg26[7:0] == 8'b00000001 && reg27[7:0] == 8'b00000001) || (x >= 200 && x < 260 && y > 0 && y < 60 && reg26[7:0] == 8'b00000100 && reg27[7:0] == 8'b00000001) || (x >= 320 && x < 380 && y > 0 && y < 60 && reg26[7:0] == 8'b00010000 && reg27[7:0] == 8'b00000001) || (x >= 440 && x < 500 && y > 0 && y < 60 && reg26[7:0] == 8'b01000000 && reg27[7:0] == 8'b00000001)
+                    || (x >= 80 && x < 140 && y > 120 && y < 180 && reg26[7:0] == 8'b00000001 && reg27[7:0] == 8'b00000100) || (x >= 200 && x < 260 && y > 120 && y < 180 && reg26[7:0] == 8'b00000100 && reg27[7:0] == 8'b00000100) || (x >= 320 && x < 380 && y > 120 && y < 180 && reg26[7:0] == 8'b00010000 && reg27[7:0] == 8'b00000100) || (x >= 440 && x < 500 && y > 120 && y < 180 && reg26[7:0] == 8'b01000000 && reg27[7:0] == 8'b00000100)
+                    || (x >= 80 && x < 140 && y > 240 && y < 300 && reg26[7:0] == 8'b00000001 && reg27[7:0] == 8'b00010000) || (x >= 200 && x < 260 && y > 240 && y < 300 && reg26[7:0] == 8'b00000100 && reg27[7:0] == 8'b00010000) || (x >= 320 && x < 380 && y > 240 && y < 300 && reg26[7:0] == 8'b00010000 && reg27[7:0] == 8'b00010000) || (x >= 440 && x < 500 && y > 240 && y < 300 && reg26[7:0] == 8'b01000000 && reg27[7:0] == 8'b00010000)
+                    || (x >= 80 && x < 140 && y > 360 && y < 420 && reg26[7:0] == 8'b00000001 && reg27[7:0] == 8'b01000000) || (x >= 200 && x < 260 && y > 360 && y < 420 && reg26[7:0] == 8'b00000100 && reg27[7:0] == 8'b01000000) || (x >= 320 && x < 380 && y > 360 && y < 420 && reg26[7:0] == 8'b00010000 && reg27[7:0] == 8'b01000000) || (x >= 440 && x < 500 && y > 360 && y < 420 && reg26[7:0] == 8'b01000000 && reg27[7:0] == 8'b01000000)
+                    || (x >= 140 && x < 200 && y > 60 && y < 120 && reg26[7:0] == 8'b00000010 && reg27[7:0] == 8'b00000010) || (x >= 260 && x < 320 && y > 60 && y < 120 && reg26[7:0] == 8'b00001000 && reg27[7:0] == 8'b00000010) || (x >= 380 && x < 440 && y > 60 && y < 120 && reg26[7:0] == 8'b00100000 && reg27[7:0] == 8'b00000010) || (x >= 500 && x < 560 && y > 60 && y < 120 && reg26[7:0] == 8'b10000000 && reg27[7:0] == 8'b00000010)
+                    || (x >= 140 && x < 200 && y > 180 && y < 240 && reg26[7:0] == 8'b00000010 && reg27[7:0] == 8'b00001000) || (x >= 260 && x < 320 && y > 180 && y < 240 && reg26[7:0] == 8'b00001000 && reg27[7:0] == 8'b00001000) || (x >= 380 && x < 440 && y > 180 && y < 240 && reg26[7:0] == 8'b00100000 && reg27[7:0] == 8'b00001000) || (x >= 500 && x < 560 && y > 180 && y < 240 && reg26[7:0] == 8'b10000000 && reg27[7:0] == 8'b00001000)
+                    || (x >= 140 && x < 200 && y > 300 && y < 360 && reg26[7:0] == 8'b00000010 && reg27[7:0] == 8'b00100000) || (x >= 260 && x < 320 && y > 300 && y < 360 && reg26[7:0] == 8'b00001000 && reg27[7:0] == 8'b00100000) || (x >= 380 && x < 440 && y > 300 && y < 360 && reg26[7:0] == 8'b00100000 && reg27[7:0] == 8'b00100000) || (x >= 500 && x < 560 && y > 300 && y < 360 && reg26[7:0] == 8'b10000000 && reg27[7:0] == 8'b00100000)
+                    || (x >= 140 && x < 200 && y > 420 && y < 480 && reg26[7:0] == 8'b00000010 && reg27[7:0] == 8'b10000000) || (x >= 260 && x < 320 && y > 420 && y < 480 && reg26[7:0] == 8'b00001000 && reg27[7:0] == 8'b10000000) || (x >= 380 && x < 440 && y > 420 && y < 480 && reg26[7:0] == 8'b00100000 && reg27[7:0] == 8'b10000000) || (x >= 500 && x < 560 && y > 420 && y < 480 && reg26[7:0] == 8'b10000000 && reg27[7:0] == 8'b10000000);
 
+    //wire[15:0] switch = SW;
 	// Quickly assign the output colors to their channels using concatenation
-	assign {VGA_R, VGA_G, VGA_B} = in_king ? 12'b110111010000 : (in_black ? 12'b001100110011 : (in_red ? 12'b111100000000 : colorOut));
+	assign {VGA_R, VGA_G, VGA_B} = in_king ? 12'b110111010000 : (in_black ? 12'b001100110011 : (in_red ? 12'b111100000000 : (in_selected ? (reg18[0] ? 12'b000011110000 : 12'b000000001111) : colorOut)));
     
 //    assign LED[0] = crown_data;
     //assign LED[3:0] = JA[10:7];
     //assign LED[7:4] = JB[10:7];
     //assign LED[11:8] = JC[10:7];
     //assign LED[15:12] = JD[10:7];
+    assign LED[0] = JD[2];
+    
+    wire[15:0] switches;
+    assign switches[3:0] = JB[10:7];
+    assign switches[4] = JA[10];
+    assign switches[5] = JA[9];
+    assign switches[6] = JA[8];
+    assign switches[7] = JA[7];
+    assign switches[8] = JD[10];
+    assign switches[9] = JD[9];
+    assign switches[10] = JD[8];
+    assign switches[11] = JD[7];
+    assign switches[12] = JC[10];
+    assign switches[13] = JC[9];
+    assign switches[14] = JC[8];
+    assign switches[15] = JC[7]; 
+    
+    wire next = JD[2];
     
     //assign LED[15:0] = reg19[15:0];
     //assign LED[7:0] = reg26[7:0];
@@ -211,7 +238,7 @@ module Wrapper (CLK100MHZ, BTNC, BTNR, LED, hSync, vSync, VGA_B, VGA_G, VGA_R, S
     //assign LED[15:8] = reg18[7:0];
 
 	// ADD YOUR MEMORY FILE HERE
-	localparam INSTR_FILE = "checkers";
+	localparam INSTR_FILE = "checkersai";
 	
 	// Main Processing Unit
 	processor CPU(.clock(clock), .reset(reset), 
@@ -241,10 +268,11 @@ module Wrapper (CLK100MHZ, BTNC, BTNR, LED, hSync, vSync, VGA_B, VGA_G, VGA_R, S
 		.ctrl_writeReg(rd),
 		.ctrl_readRegA(rs1), .ctrl_readRegB(rs2), 
 		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB),
-		.SW(SW), .BTNR(BTNR),
+		.SW(SW), .BTNR(next),
 		.reg26(reg26), .reg27(reg27), .reg28(reg28),
 		.reg25(reg25), .reg19(reg19), .reg20(reg20), .reg21(reg21), .reg22(reg22), .reg23(reg23), .reg24(reg24),
-		.reg17(reg17), .reg18(reg18));
+		.reg17(reg17), .reg18(reg18),
+		.switches(switches));
 						
 	// Processor Memory (RAM)
 	RAM ProcMem(.clk(clock), 

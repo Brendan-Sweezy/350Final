@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Fri Apr 19 19:32:54 2024
+| Date         : Mon Apr 22 22:39:37 2024
 | Host         : P1-08 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Wrapper_control_sets_placed.rpt
 | Design       : Wrapper
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    41 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    57 |
+| Unused register locations in slices containing registers |    61 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              77 |           38 |
-| No           | No                    | Yes                    |              66 |           40 |
+| No           | No                    | No                     |              77 |           41 |
+| No           | No                    | Yes                    |              66 |           38 |
 | No           | Yes                   | No                     |              30 |           30 |
-| Yes          | No                    | No                     |              66 |           21 |
-| Yes          | No                    | Yes                    |            1320 |          624 |
+| Yes          | No                    | No                     |              66 |           36 |
+| Yes          | No                    | Yes                    |            1324 |          585 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -76,44 +76,44 @@ Table of Contents
 |  CLK50MHZ_BUFG       |                                                       | CPU/DX_IR/flip_flops[2].dff/q_reg_3 |                1 |              1 |         1.00 |
 |  CLK100MHZ_IBUF_BUFG |                                                       |                                     |                2 |              3 |         1.50 |
 |  CLK50MHZ_BUFG       |                                                       | CPU/inMulDiv/en0                    |                3 |              7 |         2.33 |
-|  clk25               |                                                       | BTNC_IBUF                           |                3 |             10 |         3.33 |
-|  clk25               | Display/vPos                                          | BTNC_IBUF                           |                5 |             10 |         2.00 |
-|  CLK50MHZ_BUFG       |                                                       | BTNC_IBUF                           |               10 |             17 |         1.70 |
+|  clk25               | Display/vPos                                          | BTNC_IBUF                           |                6 |             10 |         1.67 |
+|  clk25               |                                                       | BTNC_IBUF                           |                6 |             10 |         1.67 |
+|  CLK50MHZ_BUFG       |                                                       | BTNC_IBUF                           |                7 |             17 |         2.43 |
 |  CLK50MHZ_BUFG       |                                                       | CPU/muldiv/counter/tff2/dff/q_reg_2 |               30 |             30 |         1.00 |
-|  CLK50MHZ_BUFG       |                                                       | CPU/DX_IR/flip_flops[2].dff/q_reg_4 |               23 |             31 |         1.35 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[3].w1          | BTNC_IBUF                           |               17 |             32 |         1.88 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/w_25_1                   | BTNC_IBUF                           |               26 |             32 |         1.23 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[14].w1         | BTNC_IBUF                           |               15 |             32 |         2.13 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[4].w1          | BTNC_IBUF                           |               28 |             32 |         1.14 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[12].w1         | BTNC_IBUF                           |               14 |             32 |         2.29 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[6].w1          | BTNC_IBUF                           |               18 |             32 |         1.78 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers_special[30].w1 | BTNC_IBUF                           |               13 |             32 |         2.46 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/w_19_1                   | BTNC_IBUF                           |               15 |             32 |         2.13 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/w_20_1                   | BTNC_IBUF                           |               10 |             32 |         3.20 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[15].w1         | BTNC_IBUF                           |               12 |             32 |         2.67 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[9].w1          | BTNC_IBUF                           |               14 |             32 |         2.29 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[13].w1         | BTNC_IBUF                           |               12 |             32 |         2.67 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/w_17_1                   | BTNC_IBUF                           |               26 |             32 |         1.23 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/w_18_1                   | BTNC_IBUF                           |               20 |             32 |         1.60 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[16].w1         | BTNC_IBUF                           |               19 |             32 |         1.68 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/w_21_1                   | BTNC_IBUF                           |               11 |             32 |         2.91 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[7].w1          | BTNC_IBUF                           |               10 |             32 |         3.20 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers_special[31].w1 | BTNC_IBUF                           |               15 |             32 |         2.13 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers_special[29].w1 | BTNC_IBUF                           |               10 |             32 |         3.20 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[10].w1         | BTNC_IBUF                           |               21 |             32 |         1.52 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[5].w1          | BTNC_IBUF                           |               19 |             32 |         1.68 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[8].w1          | BTNC_IBUF                           |               16 |             32 |         2.00 |
+|  CLK50MHZ_BUFG       |                                                       | CPU/DX_IR/flip_flops[2].dff/q_reg_4 |               21 |             31 |         1.48 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[12].w1         | BTNC_IBUF                           |               12 |             32 |         2.67 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[13].w1         | BTNC_IBUF                           |               14 |             32 |         2.29 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[15].w1         | BTNC_IBUF                           |               10 |             32 |         3.20 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[16].w1         | BTNC_IBUF                           |               16 |             32 |         2.00 |
 |  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[1].w1          | BTNC_IBUF                           |               22 |             32 |         1.45 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[11].w1         | BTNC_IBUF                           |               18 |             32 |         1.78 |
 |  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[2].w1          | BTNC_IBUF                           |               13 |             32 |         2.46 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/w_23_1                   | BTNC_IBUF                           |               13 |             32 |         2.46 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/w_22_1                   | BTNC_IBUF                           |                9 |             32 |         3.56 |
-|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/w_24_1                   | BTNC_IBUF                           |               23 |             32 |         1.39 |
-|  CLK50MHZ_BUFG       | CPU/DX_IR/flip_flops[2].dff/q_reg_3                   |                                     |               10 |             33 |         3.30 |
-|  CLK50MHZ_BUFG       | CPU/DX_IR/flip_flops[2].dff/q_reg_4                   |                                     |               11 |             33 |         3.00 |
-|  CLK50MHZ_BUFG       |                                                       |                                     |               36 |             74 |         2.06 |
-| ~CLK50MHZ_BUFG       | CPU/muldiv/counter/tff6/dff/write0                    | BTNC_IBUF                           |               47 |             95 |         2.02 |
-| ~CLK50MHZ_BUFG       | CPU/muldiv/counter/tff6/dff/x_continue                | BTNC_IBUF                           |              113 |            319 |         2.82 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[14].w1         | BTNC_IBUF                           |               11 |             32 |         2.91 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[3].w1          | BTNC_IBUF                           |               14 |             32 |         2.29 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[4].w1          | BTNC_IBUF                           |               26 |             32 |         1.23 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[5].w1          | BTNC_IBUF                           |               15 |             32 |         2.13 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[6].w1          | BTNC_IBUF                           |               11 |             32 |         2.91 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[8].w1          | BTNC_IBUF                           |               13 |             32 |         2.46 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/w_23_1                   | BTNC_IBUF                           |               12 |             32 |         2.67 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[9].w1          | BTNC_IBUF                           |               12 |             32 |         2.67 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/w_18_1                   | BTNC_IBUF                           |               19 |             32 |         1.68 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/w_19_1                   | BTNC_IBUF                           |               18 |             32 |         1.78 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/w_20_1                   | BTNC_IBUF                           |               10 |             32 |         3.20 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/w_21_1                   | BTNC_IBUF                           |               14 |             32 |         2.29 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[7].w1          | BTNC_IBUF                           |               10 |             32 |         3.20 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/w_17_1                   | BTNC_IBUF                           |               27 |             32 |         1.19 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers_special[31].w1 | BTNC_IBUF                           |               11 |             32 |         2.91 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/w_24_1                   | BTNC_IBUF                           |               20 |             32 |         1.60 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/w_25_1                   | BTNC_IBUF                           |               28 |             32 |         1.14 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers_special[29].w1 | BTNC_IBUF                           |               12 |             32 |         2.67 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/w_22_1                   | BTNC_IBUF                           |               10 |             32 |         3.20 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers_special[30].w1 | BTNC_IBUF                           |               10 |             32 |         3.20 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[10].w1         | BTNC_IBUF                           |               18 |             32 |         1.78 |
+|  CLK50MHZ_BUFG       | CPU/MW_IR/flip_flops[24].dff/registers[11].w1         | BTNC_IBUF                           |               14 |             32 |         2.29 |
+|  CLK50MHZ_BUFG       | CPU/DX_IR/flip_flops[2].dff/q_reg_3                   |                                     |               23 |             33 |         1.43 |
+|  CLK50MHZ_BUFG       | CPU/DX_IR/flip_flops[2].dff/q_reg_4                   |                                     |               13 |             33 |         2.54 |
+|  CLK50MHZ_BUFG       |                                                       |                                     |               39 |             74 |         1.90 |
+| ~CLK50MHZ_BUFG       | CPU/DX_IR/flip_flops[27].dff/write0                   | BTNC_IBUF                           |               42 |             96 |         2.29 |
+| ~CLK50MHZ_BUFG       | CPU/muldiv/counter/tff6/dff/x_continue                | BTNC_IBUF                           |              115 |            322 |         2.80 |
 +----------------------+-------------------------------------------------------+-------------------------------------+------------------+----------------+--------------+
 
 

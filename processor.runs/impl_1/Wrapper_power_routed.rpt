@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date             : Fri Apr 19 19:33:27 2024
+| Date             : Mon Apr 22 22:40:08 2024
 | Host             : P1-08 running 64-bit major release  (build 9200)
 | Command          : report_power -file Wrapper_power_routed.rpt -pb Wrapper_power_summary_routed.pb -rpx Wrapper_power_routed.rpx
 | Design           : Wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.181        |
+| Total On-Chip Power (W)  | 0.183        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.079        |
+| Dynamic (W)              | 0.081        |
 | Device Static (W)        | 0.101        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.2         |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.030 |     5781 |       --- |             --- |
-|   LUT as Logic |     0.030 |     3321 |     63400 |            5.24 |
-|   Register     |    <0.001 |     1559 |    126800 |            1.23 |
-|   F7/F8 Muxes  |    <0.001 |       50 |     63400 |            0.08 |
+| Slice Logic    |     0.030 |     5899 |       --- |             --- |
+|   LUT as Logic |     0.029 |     3396 |     63400 |            5.36 |
+|   Register     |    <0.001 |     1563 |    126800 |            1.23 |
+|   F7/F8 Muxes  |    <0.001 |       48 |     63400 |            0.08 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |      299 |       --- |             --- |
-| Signals        |     0.035 |     5207 |       --- |             --- |
+| Signals        |     0.034 |     5334 |       --- |             --- |
 | Block RAM      |     0.003 |     88.5 |       135 |           65.56 |
 | DSPs           |    <0.001 |        1 |       240 |            0.42 |
-| I/O            |     0.010 |       49 |       210 |           23.33 |
+| I/O            |     0.013 |       49 |       210 |           23.33 |
 | Static Power   |     0.101 |          |           |                 |
-| Total          |     0.181 |          |           |                 |
+| Total          |     0.183 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,9 +74,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.086 |       0.069 |      0.017 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.085 |       0.068 |      0.017 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.019 |       0.000 |      0.018 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.007 |       0.003 |      0.004 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.008 |       0.004 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -143,29 +143,26 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| Wrapper                  |     0.079 |
+| Wrapper                  |     0.081 |
 |   CPU                    |     0.051 |
 |     DX_A                 |     0.002 |
-|     DX_B                 |     0.002 |
-|     DX_IR                |     0.017 |
-|       flip_flops[16].dff |     0.003 |
-|       flip_flops[31].dff |     0.008 |
-|     FD_IR                |     0.009 |
-|       flip_flops[16].dff |     0.001 |
+|     DX_B                 |     0.003 |
+|     DX_IR                |     0.019 |
+|       flip_flops[16].dff |     0.002 |
+|       flip_flops[31].dff |     0.012 |
+|     FD_IR                |     0.008 |
 |       flip_flops[20].dff |     0.002 |
 |       flip_flops[26].dff |     0.002 |
-|     MW_IR                |     0.006 |
-|       flip_flops[4].dff  |     0.004 |
+|     MW_IR                |     0.005 |
+|       flip_flops[27].dff |     0.004 |
 |     PC                   |     0.001 |
-|     XM_O                 |     0.001 |
 |     muldiv               |     0.010 |
 |       multiplicand       |     0.002 |
 |       prod_multiplier    |     0.004 |
 |       rem_quo            |     0.002 |
+|   Display                |     0.001 |
 |   ImageData              |     0.002 |
-|   InstMem                |     0.001 |
-|   ProcMem                |     0.001 |
-|   RegisterFile           |     0.011 |
+|   RegisterFile           |     0.010 |
 |     register24           |     0.002 |
 +--------------------------+-----------+
 
