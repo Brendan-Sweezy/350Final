@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Fri Apr 12 10:50:22 2024
+| Date         : Fri Apr 12 12:57:34 2024
 | Host         : P1-08 running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file Wrapper_clock_utilization_routed.rpt
 | Design       : Wrapper
@@ -69,7 +69,7 @@ Table of Contents
 +----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+-------------------------+-----------+
 | Local Id | Driver Type/Pin | Constraint | Site/BEL          | Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin              | Net       |
 +----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+-------------------------+-----------||
-| 0        | FDRE/Q          | None       | SLICE_X1Y143/A5FF | X0Y2         |          20 |               1 |              |       | CPU/pixCounter_reg[1]/Q | CPU/clk25 - Static -
+| 0        | FDRE/Q          | None       | SLICE_X1Y142/A5FF | X0Y2         |          20 |               1 |              |       | CPU/pixCounter_reg[1]/Q | CPU/clk25 - Static -
 +----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+-------------------------+-----------||
 * Local Clocks in this context represents only clocks driven by non-global buffers
 ** Clock Loads column represents the clock pin loads (pin count)

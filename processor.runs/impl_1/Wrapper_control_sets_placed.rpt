@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Fri Apr 12 10:50:03 2024
+| Date         : Fri Apr 12 12:57:13 2024
 | Host         : P1-08 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Wrapper_control_sets_placed.rpt
 | Design       : Wrapper
@@ -59,7 +59,7 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |               2 |            1 |
-| No           | No                    | Yes                    |              10 |            4 |
+| No           | No                    | Yes                    |              10 |            3 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |              10 |            4 |
@@ -74,7 +74,7 @@ Table of Contents
 |     Clock Signal     |   Enable Signal  | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
 +----------------------+------------------+------------------+------------------+----------------+--------------+
 |  CLK100MHZ_IBUF_BUFG |                  |                  |                1 |              2 |         2.00 |
-|  CPU/clk25           |                  | BTNC_IBUF        |                4 |             10 |         2.50 |
+|  CPU/clk25           |                  | BTNC_IBUF        |                3 |             10 |         3.33 |
 |  CPU/clk25           | CPU/Display/vPos | BTNC_IBUF        |                4 |             10 |         2.50 |
 +----------------------+------------------+------------------+------------------+----------------+--------------+
 

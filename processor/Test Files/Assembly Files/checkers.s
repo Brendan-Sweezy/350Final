@@ -185,6 +185,8 @@ waitLoop1:
 addi, $7, $0, 0
 bne $7, $28, waitLoop1
 
+addi $18, $0, 1
+
 jal switch1
 add $9, $1, $0
 jal switch2
@@ -202,6 +204,8 @@ waitLoop2:
 addi, $7, $0, 0
 bne $7, $28, waitLoop2
 
+addi $18, $0, 0
+
 jal switch1
 nop
 add $11, $1, $0
@@ -210,8 +214,6 @@ nop
 jal switch2
 nop
 add $12, $1, $0          #Store in $11-x, $12-y from switches
-
-add $18, $12, $0
 
 
 addi $7, $0, 8          #$9 becomes start location
